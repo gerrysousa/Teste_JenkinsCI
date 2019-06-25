@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -58,7 +59,11 @@ public class BrowserDriverFactory {
 			break;
 
 		case "firefox":
-			capabilities.setBrowserName(DesiredCapabilities.firefox().getBrowserName());
+			//capabilities.setBrowserName(DesiredCapabilities.firefox().getBrowserName());
+			capabilities.setBrowserName("firefox");
+			capabilities.setPlatform(Platform.LINUX);
+			FirefoxOptions options2 = new FirefoxOptions();
+			options2.merge(capabilities);
 			break;
 		}
 
