@@ -8,9 +8,9 @@ test -DsuiteXmlFile=src/test/resources/TestSuites/PositiveTestsGrid.xml
 Jenkis funciona no grid
 
 
-´´´
+´
 docker-compose.exe up -d
-´´´
+´
 
 ´´´
 docker run ^
@@ -23,3 +23,7 @@ docker run ^
   -v /var/run/docker.sock:/var/run/docker.sock ^
   jenkins/jenkins
 ´´´
+
+
+- Agendar pra rodar de 5 em 5 minutos
+"H/5 * * * * "
