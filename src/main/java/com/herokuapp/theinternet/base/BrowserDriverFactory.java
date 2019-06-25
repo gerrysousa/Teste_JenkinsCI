@@ -3,8 +3,10 @@ package com.herokuapp.theinternet.base;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -48,7 +50,11 @@ public class BrowserDriverFactory {
 		// Creating driver
 		switch (browser) {
 		case "chrome":
-			capabilities.setBrowserName(DesiredCapabilities.chrome().getBrowserName());
+			//capabilities.setBrowserName(DesiredCapabilities.chrome().getBrowserName());
+			capabilities.setBrowserName("chrome");
+			capabilities.setPlatform(Platform.LINUX);
+			ChromeOptions options = new ChromeOptions();
+			options.merge(capabilities);
 			break;
 
 		case "firefox":
