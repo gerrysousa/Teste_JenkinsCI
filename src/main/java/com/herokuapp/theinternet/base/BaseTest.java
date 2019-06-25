@@ -39,7 +39,7 @@ public class BaseTest {
 	@AfterMethod(alwaysRun = true)
 	protected void tearDown() {
 		// Closing driver
-		//log.info("[Closing driver]");
+		log.info("[Closing driver]");
 		driver.quit();
 	}
 
